@@ -1,0 +1,20 @@
+<section id="books" class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let libro of libros">
+        <div class="card" style="width: 16rem;">
+          <img src="{{libro.imagePath}}" class="card-img-top" alt="{{libro.titulo}}">
+          <div class="card-body">
+            <h5 routerLink="/libro/{{libro.$id}}" class="card-title">{{libro.titulo}}</h5>
+            <p class="card-text">{{libro.sipnosis | truncate:80 }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Autor: {{libro.autor}} </li>
+            </ul>
+
+            <a routerLink="/libro/{{libro.$id}}" class="btn btn-outline-primary btn-block">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

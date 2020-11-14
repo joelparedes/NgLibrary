@@ -1,0 +1,26 @@
+<section id="book" class="mt-5">
+  <div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{libro.imagePath}}" class="card-img" alt="{{libro.titulo}}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{libro.titulo}}</h5>
+            <p class="card-text">{{libro.sipnosis}}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Autor: {{libro.autor}} </li>
+              <li class="list-group-item">Fecha Creacion: {{libro.fechaCreacion}} </li>
+              <li class="list-group-item">Publicacion: {{libro.fechaPublicacion}} </li>
+              <li class="list-group-item">Cantidad Paginas: {{libro.cantPaginas}} </li>
+              <li class="list-group-item">Estado: {{libro.status}} </li>
+            </ul>
+           <!--<p class="card-text"><small class="text-muted">Joel E. Paredes</small></p>--> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
