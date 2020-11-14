@@ -35,4 +35,9 @@ export class ListadoLibrosComponent implements OnInit {
     }
   }
 
+  onPreUpdate(libroUpdate: LibroInterface){
+    console.log('UPDATE: ', libroUpdate);
+    this.dataService.SelectedLibro = Object.assign({}, libroUpdate);
+  }
+
 }

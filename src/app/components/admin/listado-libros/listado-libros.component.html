@@ -1,7 +1,7 @@
 <div class="row mt-5">
   <div class="container">
     <div class="col mt-4">
-      <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalLibro"><i class="fa fa-plus-circle"></i> Add Libro</button>
+      <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalLibro"><i class="fa fa-plus-circle"></i> Agregar Libro</button>
       <div class="table table-hover">
         <thead>
             <tr>
@@ -29,7 +29,7 @@
               <td>{{libro.fechaPublicacion}}</td>
               <td>{{libro.status}}</td>
               <td>{{libro.imagePath | truncate:30}}</td>
-              <td><button class="btn btn-primary"><i class="fa fa-edit"></i>Actualizar</button></td>
+              <td><button class="btn btn-primary" (click)="onPreUpdate(libro)" data-toggle="modal" data-target="#modalLibro" ><i class="fa fa-edit"></i>Actualizar</button></td>
               <td><button class="btn btn-danger" (click)="onDeleteLibro(libro.$id)"><i class="fa fa-trash"></i>Eliminar</button></td>
            </tr>
   

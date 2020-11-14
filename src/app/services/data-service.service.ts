@@ -1,6 +1,6 @@
 import { LibroInterface } from './../models/libro';
 import { map } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs/internal/Observable';
 
@@ -20,7 +20,9 @@ export class DataServiceService {
   private libro: Observable<LibroInterface>;
 
   //Para el modal
-  public SelectedLibro: LibroInterface = {};
+  public SelectedLibro: LibroInterface = {
+    $id : null
+  };
 
   //Metodo para retonar todos los libros disponibles
   getAllLibros(){
@@ -55,6 +57,7 @@ export class DataServiceService {
 
   //metodo para actualizar libro
   updateLibro(libro: LibroInterface): void{
+    console.log('PRUEBA: ',libro);
     let idLibro = libro.$id;
     this.libroDoc = this.afs.doc<LibroInterface>(`libros/${idLibro}`);
     this.libroDoc.update(libro);
