@@ -19,7 +19,8 @@ export class ModalComponent implements OnInit {
   }
 
   onSaveLibro(libroForm: NgForm): void{
-    console.log('libroForm.value.id: ', libroForm.value.id);
+    //debugger; 
+    //console.log('libroForm.value.id: ', libroForm.value);
 
     if (libroForm.value.id == null){
       //Si es indefinido o null crear un nuevo libro

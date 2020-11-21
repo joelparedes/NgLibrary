@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
-          {{ !this.dataService.SelectedLibro.$id ? 'Nuevo Libro' : 'Actualizar Libro'}}
+          {{ !this.dataService.SelectedLibro.id ? 'Nuevo Libro' : 'Actualizar Libro'}}
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -12,7 +12,7 @@
       <div class="modal-body">
         <form #formLibro="ngForm" (ngSubmit)="onSaveLibro(formLibro)">
           
-          <input type="hidden" name="id" [(ngModel)]="this.dataService.SelectedLibro.$id" readonly >
+          <input type="hidden" name="id" [(ngModel)]="this.dataService.SelectedLibro.id" readonly >
           <!--TITULO-->
           <div class="form-group">
             <label for="titulo" class="col-form-label">Titulo:</label>
@@ -61,7 +61,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Agregar Libro</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
         </form>
       </div>

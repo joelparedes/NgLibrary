@@ -1,5 +1,5 @@
 export interface LibroInterface {
-    $id?: string;
+    id?: string;
     titulo?: string;
     sipnosis?: string;
     autor?: string;

@@ -21,7 +21,7 @@ export class DataServiceService {
 
   //Para el modal
   public SelectedLibro: LibroInterface = {
-    $id : null
+    id : null
   };
 
   //Metodo para retonar todos los libros disponibles
@@ -30,7 +30,7 @@ export class DataServiceService {
     .pipe(map(changes => {
       return changes.map(action => {
         const data = action.payload.doc.data() as LibroInterface;
-        data.$id = action.payload.doc.id;
+        data.id = action.payload.doc.id;
         return data;
       });
     }));
@@ -44,7 +44,7 @@ export class DataServiceService {
         return null;
       } else {
         const data = action.payload.data() as LibroInterface;
-        data.$id = action.payload.id;
+        data.id = action.payload.id;
         return data;
       }
     }));
@@ -57,8 +57,9 @@ export class DataServiceService {
 
   //metodo para actualizar libro
   updateLibro(libro: LibroInterface): void{
-    console.log('PRUEBA: ',libro);
-    let idLibro = libro.$id;
+    //debugger;
+    //console.log('PRUEBA: ',libro);
+    let idLibro = libro.id;
     this.libroDoc = this.afs.doc<LibroInterface>(`libros/${idLibro}`);
     this.libroDoc.update(libro);
   }
