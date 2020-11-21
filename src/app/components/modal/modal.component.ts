@@ -18,6 +18,8 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
   }
 
+  public fechaza: Date;
+
   onSaveLibro(libroForm: NgForm): void{
     //debugger; 
     //console.log('libroForm.value.id: ', libroForm.value);

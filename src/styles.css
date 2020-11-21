@@ -60,3 +60,10 @@
   .btn-google{
     background: #dd4b39;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cdk-overlay-pane {
+  z-index: 2000;
+
+}

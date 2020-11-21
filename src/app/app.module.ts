@@ -25,6 +25,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { TruncatePipe } from './Pipes/truncate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { TruncatePipe } from './Pipes/truncate.pipe';
     RegisterComponent,
     Page404Component,
     ProfileComponent,
-    TruncatePipe
+    TruncatePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { TruncatePipe } from './Pipes/truncate.pipe';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), //Conexion con firebase
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule
   ],
   providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]

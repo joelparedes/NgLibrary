@@ -15,6 +15,8 @@ export class ListadoLibrosComponent implements OnInit {
   private libros: LibroInterface[]; // si lo pongo '= {}' da error de propiedades en comun
                                     //Debe de ser un array. Ahi se almacenara la info de la BD
 
+  public buscartitulo: string = '';
+  // filterTitulo = '';
 
   ngOnInit() {
     this.getListLibros();
@@ -40,4 +42,15 @@ export class ListadoLibrosComponent implements OnInit {
     this.dataService.SelectedLibro = Object.assign({}, libroUpdate);
   }
 
+  Search(buscarTitulo: string){
+    //debugger;
+    this.buscartitulo = buscarTitulo;
+    if(this.buscartitulo != ""){
+      this.libros = this.libros.filter(res => {
+        return res.titulo.toLocaleLowerCase().match(this.buscartitulo.toLocaleLowerCase());
+      });
+    } else if (this.buscartitulo == ""){
+      this.ngOnInit();
+    }
+  }
 }
