@@ -1,18 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-  <div class="container">
+  <div class="container-fluid padding">
     <a class="navbar-brand" routerLink="/"><span class="fa fa-bookmark"> </span>{{app_name}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!--LOGGED: {{isLogged}}-->
   <div class="collapse navbar-collapse" id="mainNavbar">
-    <!--<ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" >Ejemplo
-        </a>
-      </li>
-    </ul>-->
+
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" *ngIf="!isLogged">
         <a class="nav-link" routerLink="/user/register">Register
@@ -35,7 +29,4 @@
     </ul>
   </div>
   </div>
- <!-- <div (click)="this.logout()" *ngIf="(this.authService.authService.authState | async) as user">
-    <img class="avatar" [src]="user.photoURL " alt="avatar">
-  </div>-->
 </nav>
